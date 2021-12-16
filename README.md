@@ -1,6 +1,6 @@
 # BraveNewFilms
 
-> This is a frontend repo of my project. You can take a look at backend part from HERE
+> This is a frontend repo of my project. You can take a look at backend part from [HERE](https://github.com/mgunduz1/BraveNewFilms-backend)
 
 ## Frontend Built With
 
@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Right Here]()
+[Right Here](https://boiling-ridge-88818.herokuapp.com/)
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-[Run backend of the project.]()
+[Run backend of the project.](https://github.com/mgunduz1/BraveNewFilms-backend)
 
 ### Setup
 
