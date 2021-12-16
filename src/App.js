@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import Landing from './pages/Landing';
+import FilmShow from './pages/FilmShow';
+import Genres from './pages/Genres';
+import GenreShow from './pages/GenreShow';
+import Individual from './pages/Individual';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import UserProfile from './pages/UserProfile';
+import Recommendation from './pages/Recommendation';
+import { useEffect, useState } from 'react';
+import Header from './components/Header';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    if (localStorage.getItem('id')) {
+      setUser(localStorage.getItem('id'));
+    }
+    console.log(user);
+  }, [user]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header userId={user} setUser={setUser} />
+      <Switch>
+        <Route exact path="/" render={() => <Landing />} />
+        <Route path="/film/:id" component={FilmShow} />
+        <Route path="/genres" component={Genres} />
+        <Route path="/genre/:id" component={GenreShow} />
+        <Route path="/individual/:id" component={Individual} />
+        <Route
+          exact
+          path="/login"
+          render={() => <Login setUser={setUser} />}
+        />
+        <Route
+          exact
+          path="/register"
+          render={() => <Register setUser={setUser} />}
+        />
+        <Route path="/my-profile" component={UserProfile} />
+        <Route path="/recommendations" component={Recommendation} />
+      </Switch>
+    </>
   );
 }
 
