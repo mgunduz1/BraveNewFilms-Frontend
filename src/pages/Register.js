@@ -22,7 +22,7 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/users`, {
+    fetch(`https://still-anchorage-91462.herokuapp.com/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
