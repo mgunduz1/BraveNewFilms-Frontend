@@ -6,7 +6,7 @@ import App from './App';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://still-anchorage-91462.herokuapp.com/graphql',
+  uri: process.env.NODE_ENV === 'production' ? 'https://still-anchorage-91462.herokuapp.com/graphql' : 'http://localhost:3000/graphql',
   cache: new InMemoryCache(),
 });
 

@@ -17,7 +17,7 @@ function LoginForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://still-anchorage-91462.herokuapp.com/login`, {
+    fetch(process.env.NODE_ENV === 'production' ? 'https://still-anchorage-91462.herokuapp.com/login' : 'http://localhost:3000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

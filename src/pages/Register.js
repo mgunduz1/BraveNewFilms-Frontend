@@ -22,7 +22,7 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://still-anchorage-91462.herokuapp.com/users`, {
+    fetch(process.env.NODE_ENV === 'production' ? 'https://still-anchorage-91462.herokuapp.com/users' : 'http://localhost:3000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
